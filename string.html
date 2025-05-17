@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task no 06</title>
+</head>
+
+<body>
+
+    <script>
+
+                                  /*-----------------------  Problem 1:Capitalize the First Letter in JS------------------------- */
+
+        //  let sentence;
+        //  sentence = prompt("Please enter a sentence:");
+        //  sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);        
+        //  console.log(sentence);
+
+        //  function Capitalize_first_letter(input)
+        //  {
+        //     var words=input.split(" ")
+        //     for(var i=0;i<words.length;i++)
+        //     {
+        //         words[i]=words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+        //     }    
+        //    var sentence = words.join(" ");
+        //     console.log(sentence); 
+        //  }
+
+        // var input="how are you";
+        //  Capitalize_first_letter(input);
+
+                                  /* ----------------  Problem 2:  Remove a Character From String in Javascript -----------------------*/
+
+        // var str = "Hello World"
+        // str = str.slice(1)
+        // console.log(str)
+        // var word = "Hello world"
+        // word = word.replace('H', "");
+        // console.log(word);
+
+        // function removeLetterFromString(str, letter) {
+        //     let result = "";
+
+        //     for (let i in str) {
+        //         if (str[i] !== letter) {
+        //             result += str[i];
+        //         }
+        //     }
+
+        //     console.log("Result after removing letter:", result);
+        // }
+
+        // let userInput = prompt("Enter a string:");
+        // let letterToRemove = prompt("Enter the letter you want to remove:");
+
+        // removeLetterFromString(userInput, letterToRemove);
+
+
+                                 /* ------------------------ Problem 3: Iterate Over String Characters in JS-------------------------- */
+
+        //    var string=prompt("Enter a string : ");
+        //     for(var i=0;i<string.length ;i++)
+        //        {
+        //           console.log(string[i]);
+        //        }
+
+
+                             /* ------------------------ Problem 4: Get Last N Characters of a String in JavaScript. Write a function that takes a string and a number n, and returns the last n characters of the string-------------------------- */
+
+        // function getLastNChars(str, n) {
+        //     return str.slice(-n);
+        // }
+
+        // console.log(getLastNChars("developer", 4));
+
+        // function getLastLetters(str, n) {
+        //     let result = "";
+
+        //     for (let i = str.length - n; i < str.length; i++) {
+        //         result += str[i]; 
+        //     }
+
+        //     return result;
+        // }
+        // console.log(getLastLetters("developer", 4)); 
+
+
+                         /* ------------------------ Problem 5: Count Words in a String Using JavaScript.Write a function that counts the number of words in a given sentence. Words are separated by spaces.-------------------------- */
+
+        //   trim() :
+        // It removes all the extra spaces from the beginning and the end of a string.
+        // It does NOT remove spaces between words, only spaces before the first word and after the last word.
+
+
+        function countWords(str) {
+            let trimmedStr = str.trim();
+            let wordsArray = trimmedStr.split(" ");
+
+            let count = 0;
+
+            for (let i = 0; i < wordsArray.length; i++) {
+                if (wordsArray[i] !== "") {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        console.log(countWords("  JavaScript is  fun to learn  "));
+
+
+
+    </script>
+
+</body>
+
+</html>
