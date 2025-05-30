@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Cards</title>
+  <style>
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+   
+    }
+    .product_card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 250px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+       
+    }
+    .product_card h3 {
+      margin-top: 0;
+    }
+    .out-of-stock {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container"></div>
+
+  <script>
+    const products = [
+      {
+        "id": 1,
+        "name": "Product no 01",
+        "description": "High-quality product with modern features.",
+        "price": 29.99,
+        "currency": "USD",
+        "inStock": true,
+        "category": "Electronics",
+        "tags": ["gadget", "tech", "new"],
+        "createdAt": "2025-05-16T10:00:00Z",
+        "updatedAt": "2025-05-16T10:00:00Z"
+      },
+      {
+        "id": 2,
+        "name": "Product no 02",
+        "description": "Durable and affordable item for everyday use.",
+        "price": 15.50,
+        "currency": "USD",
+        "inStock": false,
+        "category": "Home & Kitchen",
+        "tags": ["kitchen", "daily-use"],
+        "createdAt": "2025-05-15T12:30:00Z",
+        "updatedAt": "2025-05-15T12:30:00Z"
+      }
+    ];
+
+    const container = document.getElementsByClassName("card-container")[0];
+
+    const cards = products.map(product => {
+      const card = document.createElement("div");
+      card.className = "product_card";
+
+      card.innerHTML = `
+        <h3>${product.name}</h3>
+        <p><strong>Description:</strong> ${product.description}</p>
+        <p><strong>Price:</strong> ${product.currency} ${product.price}</p>
+        <p><strong>Category:</strong> ${product.category}</p>
+        <p><strong>Tags:</strong> ${product.tags.join(", ")}</p>
+        <p><strong>Status:</strong> ${product.inStock ? "In Stock" : "<span class='out-of-stock'>Out of Stock</span>"}</p>
+        <small>Created at: ${new Date(product.createdAt).toLocaleString()}</small><br>
+        <small>Updated at: ${new Date(product.updatedAt).toLocaleString()}</small>
+      `;
+
+      return card;
+    });
+
+    cards.forEach(card => container.appendChild(card));
+  </script>
+
+</body>
+</html>
