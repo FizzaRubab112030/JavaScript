@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Student Manager</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    .fail {
+      background-color: #f8d7da;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .delete-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Grade Manager</h2>
+
+  <label>Student Name:</label><br>
+  <input type="text" id="name"><br><br>
+
+  <label>Marks:</label><br>
+  <input type="number" id="marks"><br><br>
+
+  <button onclick="addStudent()">Add Student</button>
+
+  <table id="studentTable">
+    <tr>
+      <th>Name</th>
+      <th>Marks</th>
+      <th>Action</th>
+    </tr>
+  </table>
+
+  <script>
+    function addStudent() {
+      var name = document.getElementById("name").value;
+      var marks = document.getElementById("marks").value;
+
+      if (name === "")
+      {
+         alert("Please enter name.");
+        return;
+      }
+       else if( marks === "") {
+        alert("Please enter  marks.");
+        return;
+      }
+
+      var table = document.getElementById("studentTable");
+      var row = table.insertRow();
+
+      if (marks < 40) {
+        row.className = "fail";
+      }
+
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+
+      cell1.innerHTML = name;
+      cell2.innerHTML = marks;
+      cell3.innerHTML = "<button class='delete-btn' onclick='deleteStudent(this)'>Delete</button>";
+
+      
+      document.getElementById("name").value = "";
+      document.getElementById("marks").value = "";
+    }
+
+    function deleteStudent(btn) {
+      var row = btn.parentNode.parentNode;
+      row.remove();
+    }
+  </script>
+
+</body>
+</html>
