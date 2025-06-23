@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task11</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Callback task</h1> 
+
+    <script>
+        function checkFishWeight(weight, minWeight, callback) {
+            setTimeout(() => {
+                if (weight >= minWeight) {
+                    callback("Pass");
+                } else {
+                    callback("Fail");
+                }
+            }, 2000);
+        }
+
+        function scoringCallback(result) {
+            console.log("Result of check:", result);
+            const resultElement = document.createElement("h2");
+            resultElement.textContent = "Result of check: " + result;
+            document.body.appendChild(resultElement);
+        }
+
+        checkFishWeight(4.5, 3.0, scoringCallback);
+
+    </script>
+</body>
+
+</html>
