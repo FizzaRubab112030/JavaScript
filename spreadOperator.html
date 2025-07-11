@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+                     // Spread operator  
+
+        // 1. Spread Operator with string
+
+             const name = "Fizza";
+             const letters = [...name];
+             console.log(letters);
+
+        // 2. Spread Operator with Array
+
+            //  Copying an array
+             const languages = ["cpp", "js"];
+             const copiedLanguages= [...languages];
+            console.log(copiedLanguages);
+
+            // Merging arrays
+             const a = [1, 2];
+             const b = [3, 4];
+             const merged = [...a, ...b];
+            console.log(merged);
+
+        //  3. Spread Operator with Object
+
+            // Copy object   
+                const person = { name: "Fizza", age: 20 };
+                const copyPerson = { ...person };
+                console.log(copyPerson);
+
+            // Merge two objects
+                const address = { city: "Lahore", country: "Pakistan" };
+                const fullDetails = { ...person, ...address };
+                console.log(fullDetails);
+
+    </script>
+    
+</body>
+
+</html>
